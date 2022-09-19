@@ -42,8 +42,8 @@ public class UploadController {
 	 * @throws IOException 
 	 */
 	@PostMapping
-	public Object upload (@RequestPart(name = "file", required = true) MultipartFile video,
-						@RequestPart(name = "config", required = true) TranscodeConfig transcodeConfig) throws IOException {
+	public Object upload (@RequestPart(name = "file") MultipartFile video,
+						@RequestPart(name = "config") TranscodeConfig transcodeConfig) throws IOException {
 		
 		LOGGER.info("文件信息：title={}, size={}", video.getOriginalFilename(), video.getSize());
 		LOGGER.info("转码配置：{}", transcodeConfig);

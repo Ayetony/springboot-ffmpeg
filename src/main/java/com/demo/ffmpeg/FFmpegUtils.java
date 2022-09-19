@@ -63,7 +63,7 @@ public class FFmpegUtils {
 		// key_info 文件写入
 		StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder.append("key").append(LINE_SEPARATOR);					// m3u8加载key文件网络路径
-		stringBuilder.append(keyFile.toString()).append(LINE_SEPARATOR);	// FFmeg加载key_info文件路径
+		stringBuilder.append(keyFile).append(LINE_SEPARATOR);	// FFmeg加载key_info文件路径
 		stringBuilder.append(iv);											// ASE 向量
 		
 		Path keyInfo = Paths.get(folder, "key_info");
@@ -75,7 +75,7 @@ public class FFmpegUtils {
 	
 	/**
 	 * 指定的目录下生成 master index.m3u8 文件
-	 * @param fileName			master m3u8文件地址
+	 * @param file			master m3u8文件地址
 	 * @param indexPath			访问子index.m3u8的路径
 	 * @param bandWidth			流码率
 	 * @throws IOException
